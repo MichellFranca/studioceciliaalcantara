@@ -9,6 +9,21 @@
       Salvador
     </title>
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-18264087699"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-18264087699");
+    </script>
+
     <meta
       name="description"
       content="Especialistas em Design de Sobrancelhas e Micropigmentação na Pituba, Salvador - BA. Agende seu horário e realce sua beleza com exclusividade!"
@@ -22,7 +37,10 @@
     <meta name="robots" content="index, follow" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://seusite.com.br" />
+    <meta
+      property="og:url"
+      content="https://studioceciliaalcantara.vercel.app/"
+    />
     <meta
       property="og:title"
       content="Studio Cecília Alcântara | Seu momento de cuidado"
@@ -33,8 +51,9 @@
     />
     <meta
       property="og:image"
-      content="https://seusite.com.br/img/capa-whatsapp.jpg"
+      content="https://studioceciliaalcantara.vercel.app/entradacecilia.webp"
     />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
@@ -213,6 +232,17 @@
             com nossas especialistas.
           </p>
           <div class="contato-direto">
+            <!-- Google Maps Iframe Inserido Aqui -->
+            <iframe
+              src="https://maps.google.com/maps?q=Av.%20Paulo%20VI,%20993%20-%20Pituba,%20Salvador%20-%20BA&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="200"
+              style="border: 0; border-radius: 8px; margin-bottom: 20px"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+
             <p>📱 WhatsApp: (71) 99331-2087</p>
             <p>
               📍 MC Empresarial - Av. Paulo VI, 993 - Pituba, Salvador - BA,
@@ -281,6 +311,14 @@
         .getElementById("form-agendamento")
         .addEventListener("submit", function (e) {
           e.preventDefault();
+
+          // Disparo da Conversão para a Tag do Google Ads
+          if (typeof gtag !== "undefined") {
+            gtag("event", "generate_lead", {
+              event_category: "WhatsApp",
+              event_label: "Agendamento_Sobrancelha",
+            });
+          }
 
           const nome = document.getElementById("nome").value;
           const servico = document.getElementById("servico").value;
