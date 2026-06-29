@@ -362,6 +362,21 @@
         elementoMensagem.innerText = saudacao;
       }
     </script>
+
+    <a
+      href="https://wa.me/5571993312087?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista!"
+      target="_blank"
+      class="whatsapp-flutuante"
+      onclick="
+        gtag('event', 'generate_lead', {
+          event_category: 'WhatsApp',
+          event_label: 'Botao_Flutuante',
+        })
+      "
+    >
+      <i class="ph-light ph-whatsapp-logo"></i>
+    </a>
+
     <script type="module">
       import Typebot from "https://cdn.jsdelivr.net/npm/@typebot.io/js@3/dist/web.js";
 
